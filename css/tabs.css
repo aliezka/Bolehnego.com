@@ -1,0 +1,32 @@
+/*
+	 Organic Tabs
+	 by Chris Coyier
+	 http://css-tricks.com
+*/
+
+
+
+/* Generic Utility */
+.hide { position: absolute; top: -9999px; left: -9999px; }
+
+
+.hot .tabbed .tabbedNav {height:30px; background-position:center;}
+.hot .tabbed .tabbedNav li {}
+.hot .tabbed .tabbedNav li a{padding:3px 15px; height:19px;}
+
+/* Specific to example two */
+
+.tabbed .list-wrap { background: #fff;}
+
+.list-wrap ul li {margin-bottom:10px;}
+#tabbedCom .list-wrap ul li p {margin:10px;}
+
+.tabbed .tabbedNav { overflow: hidden; height:30px;}
+.tabbed .tabbedNav li { float: left;}
+.tabbed .tabbedNav li.last { margin-right: 0; }
+.tabbed .tabbedNav li a { display: block; padding:5px 15px; color: #999; font-size: 13px; text-align: center; border: 0; height:21px;}
+
+.tabbed li a.current,.tabbed li a.current:hover { background:#ddd !important; color: black; text-shadow:1px 1px #FFF; }
+
+#product-detail .tabbed .tabbedNav {border-bottom:1px solid #CCC;}
+.edit-form .tabbed .list-wrap ul {margin-top:10px;}

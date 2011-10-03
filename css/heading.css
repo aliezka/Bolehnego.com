@@ -1,0 +1,19 @@
+/* ====== Headings ====== */
+/* .h1-.h6 classes should be used to maintain the semantically appropriate heading levels - NOT for use on non-headings */
+h1, .h1{font-size:30px; font-weight:normal; font-style: normal; color:#333;}
+h2, .h2{font-size:14px; font-weight:normal; font-style: normal; color:#fff;}
+h3, .h3{font-size:14px; font-weight:normal; font-style: normal; color:#333;}
+h4, .h4{font-size:12px; font-weight:normal; font-style: normal; color: #fff;}
+h5, .h5{font-size:14px; font-weight:normal; font-style: normal; color:#fff;}
+h6, .h6{font-size:108%; font-weight:normal; font-style: italic; color:#333;}
+/* if additional headings are needed they should be created via additional classes, never via location dependant styling */
+
+h3.with-border{
+	border-bottom:1px solid #CCC;
+	padding-bottom:5px;
+	margin-bottom:5px;
+}
+
+.content h1{
+	display:inline;
+}

@@ -1,0 +1,363 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/tabs.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery-thumb.css" />
+<title>Admin Panel::Summary</title>
+<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
+<script type="text/javascript" src="js/organictabs.jquery.js"></script>
+<script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script type='text/javascript'>
+        jQuery(function(){
+            
+            jQuery("#tabbedCom").organicTabs();
+			
+    
+        });
+		
+		tinyMCE.init({
+       	 	theme : "advanced",
+        	mode : "specific_textareas",
+			editor_selector : "mceEditor",
+        	plugins : "fullpage",
+        	theme_advanced_buttons3_add : "fullpage",
+			theme_advanced_toolbar_location : "top",
+      	  	theme_advanced_toolbar_align : "left",
+        	theme_advanced_statusbar_location : "bottom",
+		});
+		
+		
+
+
+		 
+</script>
+<script type="text/javascript">
+var currentImage;
+var currentIndex = -1;
+var interval;
+function showImage(index){
+    if(index < $('#bigPic img').length){
+        var indexImage = $('#bigPic img')[index]
+        if(currentImage){   
+            if(currentImage != indexImage ){
+                $(currentImage).css('z-index',2);
+                clearTimeout(myTimer);
+                $(currentImage).fadeOut(0, function() {
+                    //myTimer = setTimeout("showNext()", );
+                    $(this).css({'display':'none','z-index':1})
+                });
+            }
+        }
+        $(indexImage).css({'display':'block', 'opacity':1});
+        currentImage = indexImage;
+        currentIndex = index;
+        $('#thumbs li').removeClass('active');
+        $($('#thumbs li')[index]).addClass('active');
+    }
+}
+ 
+function showNext(){
+    var len = $('#bigPic img').length;
+    var next = currentIndex < (len-1) ? currentIndex + 1 : 0;
+    showImage(next);
+}
+ 
+var myTimer;
+ 
+$(document).ready(function() {
+    myTimer = setTimeout("showNext()", 3000);
+    showNext(); //Load first image
+    $('#thumbs li').bind('click',function(e){
+        var count = $(this).attr('rel');
+        showImage(parseInt(count)-1);
+    });
+});
+
+
+
+</script>
+</head>
+
+<body>
+<div class="max1000"> 
+  <!------TOPMENU & HEADER-------------------------->
+  
+  <div class="topmenu">
+    <div class="right info"> <span class="login_info mrs">Signing as <strong>Admin</strong> | <a href="#">Sign Out</a></span> <a href="#"><span class="notification_unactive mrs">0</span>New Message</a> <a href="#"><span class="notification_active mrs">3</span>New Orders</a></div>
+  </div>
+  <div class="header">
+    <div class="search_form right">
+      <form action="#">
+        <div class="inputset">
+          <input type="text" name="search" class="search" value="search product" onfocus="if(this.value == 'search product') {this.value = '';}" onblur="if(this.value==''){this.value = 'search product';}"/>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--------------------> 
+  
+<!-------------------LEFT NAV-------------------------->
+  
+  <div class="left nav max190">
+    <ul class="parent">
+      <li><a href="#">Summary</a></li>
+      <li><a href="#">User</a>
+        <ul class="child">
+          <li><a href="#">Add Admin</a></li>
+          <li><a href="#">Add Customer</a></li>
+        </ul>
+      </li>
+      <li  class="active"> <a href="#">Product</a>
+        <ul class="child">
+          <li ><a href="#">Add Product</a></li>
+          <li><a href="#">Product Category</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Orders</a>
+      	<ul class="child">
+          <li><a href="#">Unknown</a></li>
+          <li><a href="#">Unknown</a></li>
+          <li><a href="#">Unknown</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Special Offer</a>
+      	<ul class="child">
+          <li><a href="#">Add Event</a></li>
+          <li><a href="#">Add Special Offer</a></li>
+          <li><a href="#">Event List</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Customer Review</a></li> 
+      <li><a href="#">Store</a>
+      	<ul class="child">
+          <li><a href="#">Add Store</a></li>
+        </ul>
+	  </li> 
+      <li><a href="#">Manufacter</a>
+      	<ul class="child">
+          <li><a href="#">Add Manufacter</a></li>
+        </ul>
+	  </li>
+      <li><a href="#">Bolehnego.com Profile</a></li>     
+    </ul>
+  </div>
+  
+ <!---------------------------------------------------> 
+  
+  <!--CONTENT--->
+  
+  <div class="content left max770">
+    <h1>Product Detail</h1>
+    <hr />
+    <div id="product-detail" class="edit-form">
+      <div id="tabbedCom" class="tabbed">
+        <ul class="tabbedNav headsection">
+          <li class="nav-one"><a href="#PrimaryData" class="current">Primary Data</a></li>
+          <li class="nav-two"><a href="#SecondaryData">Secondary Data</a></li>
+          <li class="nav-three last"><a href="#ProductStatus">Product Image & Status</a></li>
+        </ul>
+        <div class="list-wrap">
+          <form action="#">
+            <input type="submit" class="action-button right" value="Save">
+            <div class="clear"></div>
+            <!--        Product Information-->
+            <ul id="PrimaryData">
+              <li>
+                <div class="mod">
+                  <div class="inputset">
+                    <div class="label">
+                      <label for="Publish">Publish</label>
+                    </div>
+                    <div class="input">
+                      <input type="checkbox" name="publish">
+                    </div>
+                  </div>
+                  <div class="inputset">
+                    <div class="label">
+                      <label for="SKU">SKU</label>
+                    </div>
+                    <span>
+                    <div class="input">
+                      <input type="text" name="sku">
+                    </div>
+                    </span> </div>
+                  <div class="inputset">
+                    <div class="label">
+                      <label for="Product Name">Product Name</label>
+                    </div>
+                    <span>
+                    <div class="input">
+                      <input type="text" name="product_name">
+                    </div>
+                    </span> </div>
+                  <div class="inputset">
+                    <div class="label">
+                      <label for="Category">Category</label>
+                    </div>
+                    <span>
+                    <div class="input">
+                      <input type="text" name="category">
+                    </div>
+                    </span> </div>
+                  <div class="inputset">
+                    <div class="label">
+                      <label for="Product Price">Product Price</label>
+                    </div>
+                    <span>
+                    <div class="input">
+                      <input type="text" name="product_price">
+                    </div>
+                    </span> Rupiah </div>
+                  <div class="inputset">
+                    <div class="label">
+                      <label for="Store">Store</label>
+                    </div>
+                    <span>
+                    <div class="input">
+                      <fieldset>
+                        <select>
+                          <option selected="selected" value="">Jaya Makmur Sejahtera</option>
+                          <option value="">Bintang Dilangit</option>
+                          <option value="">Sinar Jagat Raya</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                    </span> </div>
+                  <div class="inputset">
+                    <div class="label">
+                      <label for="Short Description">Short Description</label>
+                    </div>
+                    <span>
+                    <div class="input">
+                      <textarea name="short-desc" cols="54" rows="5"></textarea>
+                    </div>
+                    </span> </div>
+                </div>
+                <div class="mod" id="prod_desc">
+                  <h3 class="with-border">Product Description</h3>
+                  <textarea name="prod-desc" class="mceEditor" cols="150" rows="15"></textarea>
+                </div>
+              </li>
+            </ul>
+            <!------------------------------------> 
+            
+            <!--        Secondary Data-->
+            <ul id="SecondaryData" class="hide">
+              <li>
+                <div class="inputset">
+                  <div class="label">
+                    <label for="Category">Based on Category</label>
+                  </div>
+                  <span>
+                  <div class="input">
+                    <fieldset>
+                      <select>
+                        <option selected="selected" value="">Unknown</option>
+                        <option value="">Books</option>
+                        <option value="">Computers</option>
+                        <option value="">Electronics</option>
+                        <option value="">Foods</option>
+                        <option value="">Handphone & Gadgets</option>
+                      </select>
+                    </fieldset>
+                  </div>
+                  </span> </div>
+                <div class="inputset"> <span>
+                  <div class="input-attribute">
+                    <input type="text" name="product_price" value="attribute" onblur="if(this.value==''){this.value = 'attribute'}" onfocus="if(this.value=='attribute'){this.value = ''}">
+                  </div>
+                  </span> <span>
+                  <div class="input-value">
+                    <input type="text" name="product_price" value="value" onblur="if(this.value==''){this.value = 'value'}" onfocus="if(this.value=='value'){this.value = ''}">
+                  </div>
+                  </span> </div>
+                <a href="#" class="add-attr-btn"></a> </li>
+            </ul>
+            <!------------------------------------> 
+            
+            <!--        Product Dimension & Weight-->
+            <ul id="ProductStatus" class="hide">
+              <li>
+                <div class="mod" id="product-image">
+                  <h3 class="with-border">Product Image</h3>
+                  <div class="inputset">
+                    <div class="label">
+                      <label for="Full Pic">Full Picture</label>
+                    </div>
+                    <span>
+                    <div class="input">
+                      <input type="file" name="product-pic">
+                    </div>
+                    </span> </div>
+                  
+                  <div class="thumb left">
+                    <div id="bigPic">
+                    <div class="img-option">
+						<a href="#">Delete</a> | <a href="#">Set as Thumbnail</a>
+                    </div>
+					<img src="img/prod_img/imac21.jpg" alt="iMac21" width="500" /> <img src="img/prod_img/imac21-2.jpg" alt="iMac21" width="500" /> </div>
+                    <ul id="thumbs">
+                      <li class="active" rel="1"><img src="img/prod_img/imac21-thumb.jpg" alt="iMac21" width="100" /></li>
+                      <li rel="2"><img src="img/prod_img/imac21-2-thumb.jpg" alt="iMac21" width="100" /></li>
+                    </ul>
+                  </div>
+                  <div class="clear"></div>
+                  
+                </div>
+                <div class="mod" id="product-status">
+                  <h3 class="with-border">Product Status</h3>
+                  <div class="inputset">
+                    <div class="label">
+                      <label for="Stock">Stock</label>
+                    </div>
+                    <span>
+                    <div class="input">
+                      <fieldset>
+                        <select>
+                          <option selected="selected" value="">In Stock</option>
+                          <option value="">Out of Stock</option>
+                          <option value="">Unavailable</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                    </span> </div>
+                  <div class="inputset">
+                    <div class="label">
+                      <label for="Special Offer">Special Offer</label>
+                    </div>
+                    <span>
+                    <div class="input">
+                      <fieldset>
+                        <select>
+                          <option value="" selected="selected">None</option>
+                          <option value="">Holiday Offer 25% Discount</option>
+                          <option value="">Free Shipping</option>
+                          <option value="">Buy One Get One</option>
+                          <option value="">Get Free Movie Ticket</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                    </span> </div>
+                </div>
+              </li>
+            </ul>
+            <!------------------------------------>
+            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--CLEAR FLOAT-->
+  <div class="clear"> </div>
+  <!----->
+  
+  <div class="footer">
+    <hr />
+    <p class="right">WebsiteName (c) 2011. Copyright Reserved</p>
+  </div>
+</div>
+</body>
+</html>

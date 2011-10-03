@@ -1,0 +1,11 @@
+@charset "utf-8";
+/* CSS Document */
+
+.max1000{width:1000px; margin:0 auto;}
+.max190{width:190px; margin-right:30px;}
+.max770{width:770px;}
+.left{float:left;}
+.right{float:right;}
+.clear{float:none; clear:both;}
+.relative {position:relative;}
+.100% {width:100%;}

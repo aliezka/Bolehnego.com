@@ -1,0 +1,49 @@
+
+	
+	
+		
+	
+	
+/* // thumbnail list */
+
+#bigPic{
+	width:500px;
+	height:500px;
+	background-color:#FFF;
+	margin-top:5px;
+	margin-bottom:10px;
+}
+
+#bigPic img{
+	position:absolute;
+	display:none;
+	width:500px;
+	height:500px;
+}
+ul#thumbs li.active{
+	
+	background:#fff;
+	
+}
+ul#thumbs, ul#thumbs li{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+	
+ul#thumbs li{
+	float:left;
+	margin-right:7px;
+	margin-bottom:5px;
+	cursor:pointer;
+}
+ul#thumbs img{
+	float:left;
+	width:100px;
+	height:100px;
+	line-height:100px;
+	overflow:hidden;
+	position:relative;
+	z-index:1;
+	border:1px solid #CCC;		
+}

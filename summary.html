@@ -1,0 +1,420 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/tabs.css" />
+<title>Admin Panel::Summary</title>
+<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
+<script type="text/javascript" src="js/organictabs.jquery.js"></script>
+<script type='text/javascript'>
+        jQuery(function(){
+            
+            jQuery("#tabbedCom").organicTabs();
+			
+    
+        });
+		 
+</script>
+</head>
+
+<body>
+<div class="max1000">
+  <div class="topmenu">
+    <div class="right info"> <span class="login_info mrs">Signing as <strong>Admin</strong> | <a href="#">Sign Out</a></span> <a href="#"><span class="notification_unactive mrs">0</span>New Message</a> <a href="#"><span class="notification_active mrs">3</span>New Orders</a></div>
+  </div>
+  <div class="header">
+    <div class="logo"> </div>
+    <div class="search_form right">
+      <form action="#">
+        <div class="inputset">
+          <input type="text" name="search" class="search" value="search product" onfocus="if(this.value == 'search product') {this.value = '';}" onblur="if(this.value==''){this.value = 'search product';}"/>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+   <!-------------------LEFT NAV-------------------------->
+  
+  <div class="left nav max190">
+    <ul class="parent">
+      <li class="active"><a href="#">Summary</a></li>
+      <li><a href="#">User</a>
+        <ul class="child">
+          <li><a href="#">Add Admin</a></li>
+          <li><a href="#">Add Customer</a></li>
+        </ul>
+      </li>
+      <li> <a href="#">Product</a>
+        <ul class="child">
+          <li><a href="#">Add Product</a></li>
+          <li><a href="#">Product Category</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Orders</a>
+      	<ul class="child">
+          <li><a href="#">Unknown</a></li>
+          <li><a href="#">Unknown</a></li>
+          <li><a href="#">Unknown</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Special Offer</a>
+      	<ul class="child">
+          <li><a href="#">Add Event</a></li>
+          <li><a href="#">Add Special Offer</a></li>
+          <li><a href="#">Event List</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Customer Review</a></li> 
+      <li><a href="#">Store</a>
+      	<ul class="child">
+          <li><a href="#">Add Store</a></li>
+        </ul>
+	  </li> 
+      <li><a href="#">Manufacter</a>
+      	<ul class="child">
+          <li><a href="#">Add Manufacter</a></li>
+        </ul>
+	  </li>
+      <li><a href="#">Bolehnego.com Profile</a></li>     
+    </ul>
+  </div>
+  
+ <!---------------------------------------------------> 
+  
+  <!--CONTENT--->
+  
+  <div class="content max770 left">
+    <h1>Summary</h1>
+    <hr />
+    <div class="mod statistik-pengunjung">
+      <div class="headsection">
+        <h3>Visitor Statistic</h3>
+      </div>
+      <div class="inner"> <img src="img/graph.jpg" /> </div>
+    </div>
+    
+    <!--TABBED-->
+    <div class="mod table" id="order-status">
+      <h3>Status Orders</h3>
+      <div id="tabbedCom" class="tabbed">
+        <ul class="tabbedNav headsection">
+          <li class="nav-one"><a href="#Pending" class="current">Pending</a></li>
+          <li class="nav-two"><a href="#InBid">In Bid</a></li>
+          <li class="nav-three last"><a href="#Unshipped">Unshipped</a></li>
+        </ul>
+        <div class="list-wrap">
+          <ul id="Pending">
+            <li>
+              <table id="pending-order" class="box-table" summary="All Pending Orders">
+                <thead>
+                  <tr>
+                    <th scope="col">Order Num</th>
+                    <th scope="col">Shopper</th>
+                    <th scope="col">Order Date</th>
+                    <th scope="col">Total Product</th>
+                    <th scope="col">Change Status</th>
+                    <th scope="col">Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="#">13</a></td>
+                    <td><a href="#">Luthfi Hariz</a></td>
+                    <td>Today</td>
+                    <td>5</td>
+                    <td><form method="get" action="">
+                        <fieldset>
+                          <select>
+                            <option selected="selected" value="">Pending</option>
+                            <option value="">Confirmed</option>
+                            <option value="">Shipped</option>
+                            <option value="">Canceled</option>
+                            <option value="">In Bid</option>
+                          </select>
+                        </fieldset>
+                      </form></td>
+                    <td><a href="#"><img src="img/trash.png" /></a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">15</a></td>
+                    <td><a href="#">Segi Henggana</a></td>
+                    <td>Yesterday</td>
+                    <td>3</td>
+                    <td><form method="get" action="">
+                        <fieldset>
+                          <select>
+                            <option selected="selected" value="">Pending</option>
+                            <option value="">Confirmed</option>
+                            <option value="">Shipped</option>
+                            <option value="">Canceled</option>
+                            <option value="">In Bid</option>
+                          </select>
+                        </fieldset>
+                      </form></td>
+                    <td><a href="#"><img src="img/trash.png" /></a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">17</a></td>
+                    <td><a href="#">Reza Firmansyah</a></td>
+                    <td>18/08/2011</td>
+                    <td>3</td>
+                    <td><form method="get" action="">
+                        <fieldset>
+                          <select>
+                            <option selected="selected" value="">Pending</option>
+                            <option value="">Confirmed</option>
+                            <option value="">Shipped</option>
+                            <option value="">Canceled</option>
+                            <option value="">In Bid</option>
+                          </select>
+                        </fieldset>
+                      </form></td>
+                    <td><a href="#"><img src="img/trash.png" /></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+          </ul>
+          <ul id="InBid" class="hide">
+            <li>
+              <table id="inbid-order" class="box-table" summary="All In Bid Orders">
+                <thead>
+                  <tr>
+                    <th scope="col">Order Num</th>
+                    <th scope="col">Shopper</th>
+                    <th scope="col">Order Date</th>
+                    <th scope="col">Total Product</th>
+                    <th scope="col">Change Status</th>
+                    <th scope="col">Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="#">13</a></td>
+                    <td><a href="#">Luthfi Hariz</a></td>
+                    <td>Today</td>
+                    <td>5</td>
+                    <td><form method="get" action="">
+                        <fieldset>
+                          <select>
+                            <option selected="selected" value="">Pending</option>
+                            <option value="">Confirmed</option>
+                            <option value="">Shipped</option>
+                            <option value="">Canceled</option>
+                            <option value="">In Bid</option>
+                          </select>
+                        </fieldset>
+                      </form></td>
+                    <td><a href="#"><img src="img/trash.png" /></a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">15</a></td>
+                    <td><a href="#">Segi Henggana</a></td>
+                    <td>Yesterday</td>
+                    <td>3</td>
+                    <td><form method="get" action="">
+                        <fieldset>
+                          <select>
+                            <option selected="selected" value="">Pending</option>
+                            <option value="">Confirmed</option>
+                            <option value="">Shipped</option>
+                            <option value="">Canceled</option>
+                            <option value="">In Bid</option>
+                          </select>
+                        </fieldset>
+                      </form></td>
+                    <td><a href="#"><img src="img/trash.png" /></a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">17</a></td>
+                    <td><a href="#">Reza Firmansyah</a></td>
+                    <td>18/08/2011</td>
+                    <td>3</td>
+                    <td><form method="get" action="">
+                        <fieldset>
+                          <select>
+                            <option selected="selected" value="">Pending</option>
+                            <option value="">Confirmed</option>
+                            <option value="">Shipped</option>
+                            <option value="">Canceled</option>
+                            <option value="">In Bid</option>
+                          </select>
+                        </fieldset>
+                      </form></td>
+                    <td><a href="#"><img src="img/trash.png" /></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+          </ul>
+          <ul id="Unshipped" class="hide">
+            <li>
+              <table id="unshipped-order" class="box-table" summary="All Unshipped Orders">
+                <thead>
+                  <tr>
+                    <th scope="col">Order Num</th>
+                    <th scope="col">Shopper</th>
+                    <th scope="col">Order Date</th>
+                    <th scope="col">Total Product</th>
+                    <th scope="col">Change Status</th>
+                    <th scope="col">Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="#">13</a></td>
+                    <td>Luthfi Hariz</td>
+                    <td>Today</td>
+                    <td>5</td>
+                    <td><form method="get" action="">
+                        <fieldset>
+                          <select>
+                            <option value="">Pending</option>
+                            <option selected="selected" value="">Confirmed</option>
+                            <option value="">Shipped</option>
+                            <option value="">Canceled</option>
+                            <option value="">In Bid</option>
+                          </select>
+                        </fieldset>
+                      </form></td>
+                    <td><a href="#"><img src="img/trash.png" /></a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">15</a></td>
+                    <td>Segi Henggana</td>
+                    <td>Yesterday</td>
+                    <td>3</td>
+                    <td><form method="get" action="">
+                        <fieldset>
+                          <select>
+                            <option value="">Pending</option>
+                            <option selected="selected" value="">Confirmed</option>
+                            <option value="">Shipped</option>
+                            <option value="">Canceled</option>
+                            <option value="">In Bid</option>
+                          </select>
+                        </fieldset>
+                      </form></td>
+                    <td><a href="#"><img src="img/trash.png" /></a></td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">17</a></td>
+                    <td><a href="#">Reza Firmansyah</a></td>
+                    <td>18/08/2011</td>
+                    <td>3</td>
+                    <td><form method="get" action="">
+                        <fieldset>
+                          <select>
+                            <option value="">Pending</option>
+                            <option selected="selected" value="">Confirmed</option>
+                            <option value="">Shipped</option>
+                            <option value="">Canceled</option>
+                            <option value="">In Bid</option>
+                          </select>
+                        </fieldset>
+                      </form></td>
+                    <td><a href="#"><img src="img/trash.png" /></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!---->
+    <div class="mod table" id="customer-rev">
+      <h3>Latest Customer Review</h3>
+      <div class="inner">
+        <table id="customer-review" class="box-table" summary="Latest Customer Review">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Product</th>
+              <th scope="col">Customer Name/Date</th>
+              <th scope="col">Rating</th>
+              <th scope="col">Review</th>
+              <th scope="col">Published</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="#">1</a></td>
+              <td><a href="#">Maicih Level 15</a></td>
+              <td><a href="#">Luthfi</a>/Today</td>
+              <td><span class="rating-bagus">Bagus</span></td>
+              <td id="review-section">Tidak seperti anggapan banyak orang, Lorem Ipsum bukanlah teks-teks yang diacak. Ia berakar dari sebuah naskah sastra latin klasik dari era 45 sebelum masehi, hingga bisa dipastikan usianya telah mencapai lebih dari 2000 tahun.</td>
+              <td><a href="#">publish</a></td>
+            </tr>
+            <tr>
+              <td><a href="#">2</a></td>
+              <td><a href="#">Maicih Level 12</a></td>
+              <td><a href="#">Hariz</a>/Today</td>
+              <td><span class="rating-cukup">Cukup</span></td>
+              <td id="review-section">Tidak seperti anggapan banyak orang, Lorem Ipsum bukanlah teks-teks yang diacak. Ia berakar dari sebuah naskah sastra latin klasik dari era 45 sebelum masehi, hingga bisa dipastikan usianya telah mencapai lebih dari 2000 tahun.</td>
+              <td><a href="#">publish</a></td>
+            </tr>
+              </tr>
+            
+            <tr>
+              <td><a href="#">3</a></td>
+              <td><a href="#">Galaxy Tab 10.2 32GB</a></td>
+              <td><a href="#">Hariz</a>/Today</td>
+              <td><span class="rating-lumayan">Lumayan</span></td>
+              <td id="review-section">Tidak seperti anggapan banyak orang, Lorem Ipsum bukanlah teks-teks yang diacak. Ia berakar dari sebuah naskah sastra latin klasik dari era 45 sebelum masehi.</td>
+              <td><a href="#">publish</a></td>
+            </tr>
+            <tr>
+              <td><a href="#">3</a></td>
+              <td><a href="#">Samsung Galaxy Gio GT-S5660</a></td>
+              <td><a href="#">Hariz</a>/Today</td>
+              <td><span class="rating-jelek">Jelek</span></td>
+              <td id="review-section">Tidak seperti anggapan banyak orang, Lorem Ipsum bukanlah teks-teks yang diacak. Ia berakar dari sebuah naskah sastra latin klasik dari era 45 sebelum masehi.</td>
+              <td><a href="#">publish</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!---->
+    <div class="mod table" id="outofstock-product">
+      <h3>Out of Stock Product</h3>
+      <div class="inner">
+        <table id="customer-review" class="box-table" summary="Latest Customer Review">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">SKU</th>
+              <th scope="col">Product</th>
+              <th scope="col">Category</th>
+              <th scope="col">Update Stock</th>
+            </tr>
+          </thead>
+          <tbody>
+          	<tr>
+            	<td>1</td>
+                <td><a href="#">MAPP-SBPC-002</a></td>
+                <td><a href="#">iPad 2 White 64 GB</a></td>
+                <td>Gadget & Electronic</td>
+                <td><a href="#">Update</a></td>
+            </tr>
+            <tr>
+            	<td>2</td>
+                <td><a href="#">MSAM-SJGS-001</a></td>
+                <td><a href="#">Samsung Galaxy Gio GT-S5660</a></td>
+                <td>Gadget & Electronic</td>
+                <td><a href="#">Update</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="clear"> </div>
+  <div class="footer">
+    <hr />
+    <p class="right">WebsiteName (c) 2011. Copyright Reserved</p>
+  </div>
+</div>
+</body>
+</html>
