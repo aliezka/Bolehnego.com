@@ -1,0 +1,193 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link rel="stylesheet" type="text/css" href="css/tabs.css" />
+<link rel="stylesheet" type="text/css" href="css/jquery-thumb.css" />
+<title>Admin Panel::Summary</title>
+<script type='text/javascript' src='js/jquery-1.4.2.min.js'></script>
+<script type="text/javascript" src="js/organictabs.jquery.js"></script>
+<script type="text/javascript" src="tinymce/jscripts/tiny_mce/tiny_mce.js"></script>
+<script type='text/javascript'>
+        jQuery(function(){
+            
+            jQuery("#tabbedCom").organicTabs();
+			
+    
+        });
+		
+		tinyMCE.init({
+       	 	theme : "advanced",
+        	mode : "specific_textareas",
+			editor_selector : "mceEditor",
+        	plugins : "fullpage",
+        	theme_advanced_buttons3_add : "fullpage",
+			theme_advanced_toolbar_location : "top",
+      	  	theme_advanced_toolbar_align : "left",
+        	theme_advanced_statusbar_location : "bottom",
+		});
+		
+		
+
+
+		 
+</script>
+<script type="text/javascript">
+var currentImage;
+var currentIndex = -1;
+var interval;
+function showImage(index){
+    if(index < $('#bigPic img').length){
+        var indexImage = $('#bigPic img')[index]
+        if(currentImage){   
+            if(currentImage != indexImage ){
+                $(currentImage).css('z-index',2);
+                clearTimeout(myTimer);
+                $(currentImage).fadeOut(0, function() {
+                    //myTimer = setTimeout("showNext()", );
+                    $(this).css({'display':'none','z-index':1})
+                });
+            }
+        }
+        $(indexImage).css({'display':'block', 'opacity':1});
+        currentImage = indexImage;
+        currentIndex = index;
+        $('#thumbs li').removeClass('active');
+        $($('#thumbs li')[index]).addClass('active');
+    }
+}
+ 
+function showNext(){
+    var len = $('#bigPic img').length;
+    var next = currentIndex < (len-1) ? currentIndex + 1 : 0;
+    showImage(next);
+}
+ 
+var myTimer;
+ 
+$(document).ready(function() {
+    myTimer = setTimeout("showNext()", 3000);
+    showNext(); //Load first image
+    $('#thumbs li').bind('click',function(e){
+        var count = $(this).attr('rel');
+        showImage(parseInt(count)-1);
+    });
+});
+
+
+
+</script>
+</head>
+
+<body>
+<div class="max1000"> 
+  <!------TOPMENU & HEADER-------------------------->
+  
+  <div class="topmenu">
+    <div class="right info"> <span class="login_info mrs">Signing as <strong>Admin</strong> | <a href="#">Sign Out</a></span> <a href="#"><span class="notification_unactive mrs">0</span>New Message</a> <a href="#"><span class="notification_active mrs">3</span>New Orders</a></div>
+  </div>
+  <div class="header">
+    <div class="search_form right">
+      <form action="#">
+        <div class="inputset">
+          <input type="text" name="search" class="search" value="search product" onfocus="if(this.value == 'search product') {this.value = '';}" onblur="if(this.value==''){this.value = 'search product';}"/>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!--------------------> 
+  
+  <!-------------------LEFT NAV-------------------------->
+  
+  <div class="left nav max190">
+    <ul class="parent">
+      <li><a href="#">Summary</a></li>
+      <li><a href="#">User</a>
+        <ul class="child">
+          <li><a href="#">Add Admin</a></li>
+          <li><a href="#">Add Customer</a></li>
+        </ul>
+      </li>
+      <li  class="active"> <a href="#">Product</a>
+        <ul class="child">
+          <li ><a href="#">Add Product</a></li>
+          <li><a href="#">Product Category</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Orders</a>
+        <ul class="child">
+          <li><a href="#">Unknown</a></li>
+          <li><a href="#">Unknown</a></li>
+          <li><a href="#">Unknown</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Special Offer</a>
+        <ul class="child">
+          <li><a href="#">Add Event</a></li>
+          <li><a href="#">Add Special Offer</a></li>
+          <li><a href="#">Event List</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Customer Review</a></li>
+      <li><a href="#">Store</a>
+        <ul class="child">
+          <li><a href="#">Add Store</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Manufacter</a>
+        <ul class="child">
+          <li><a href="#">Add Manufacter</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Bolehnego.com Profile</a></li>
+    </ul>
+  </div>
+  
+  <!---------------------------------------------------> 
+  
+  <!--CONTENT--->
+  
+  <div class="content left max770">
+    <h1>User List</h1>
+    <hr />
+    <div class="mod table" id="product-list">
+      <div class="inner">
+        <table id="product-list-table" class="box-table soft-color" summary="Product List">
+          <thead>
+            <tr>
+              <th scope="col">User id</th>
+              <th scope="col">Email</th>
+              <th scope="col">Privilidges</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><a href="#">lavalyst@gmail.com</a></td>
+              <td><a href="#">Super-Admin</a></td>				
+              <td>Delete</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td><a href="#">kampret@gmail.com</a></td>
+              <td><a href="#">Admin</a></td>				
+              <td>Delete</td>
+            </tr>                       
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  
+  <!--CLEAR FLOAT-->
+  <div class="clear"> </div>
+  <!----->
+  
+  <div class="footer">
+    <hr />
+    <p class="right">WebsiteName (c) 2011. Copyright Reserved</p>
+  </div>
+</div>
+</body>
+</html>
