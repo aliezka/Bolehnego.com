@@ -17,3 +17,7 @@ h3.with-border{
 .content h1{
 	display:inline;
 }
+
+h3.customer-name{
+	font-size:22px;
+}
