@@ -80,6 +80,9 @@ $(document).ready(function() {
 </head>
 
 <body>
+
+
+
 <div class="max1000"> 
   <!------TOPMENU & HEADER-------------------------->
   
@@ -164,7 +167,7 @@ $(document).ready(function() {
             <ul id="CustomerProfile">
               <li>
                 <div class="mod left customer-profile-form">
-                 <h3 class="customer-name">Luthfi Hariz</h3>
+                  <h3 class="customer-name">Luthfi Hariz</h3>
                   <div class="inputset">
                     <div class="label">
                       <label for="Email">Email</label>
@@ -173,7 +176,9 @@ $(document).ready(function() {
                     <div class="input">
                       <input type="text" name="email">
                     </div>
-                    </span> </div>
+                    </span>
+                    <div class="err2">Email sudah digunakan</div>
+                  </div>
                   <div class="inputset">
                     <div class="label">
                       <label for="First Name">First Name</label>
@@ -212,6 +217,15 @@ $(document).ready(function() {
                     </span></div>
                   <div class="inputset">
                     <div class="label">
+                      <label for="Country">Country</label>
+                    </div>
+                    <span>
+                    <div class="input">
+                      <input type="text" name="country">
+                    </div>
+                    </span></div>
+                  <div class="inputset">
+                    <div class="label">
                       <label for="City">City</label>
                     </div>
                     <span>
@@ -230,25 +244,17 @@ $(document).ready(function() {
                     </span></div>
                   <div class="inputset">
                     <div class="label">
-                      <label for="Country">Country</label>
-                    </div>
-                    <span>
-                    <div class="input">
-                      <input type="text" name="country">
-                    </div>
-                    </span></div>
-                  <div class="inputset">
-                    <div class="label">
                       <label for="Phone">Phone</label>
                     </div>
                     <span>
                     <div class="input">
                       <input type="text" name="phone">
                     </div>
-                    </span></div>
+                    </span> </div>
                 </div>
                 <div class="mod left">
                   <div class="customer-img"> <img src="img/no-picture.jpg" />
+                    <input type="file" name="upload-user-img" />
                     <div class="customer-detail">
                       <div class="small-labelset">
                         <div class="label">
@@ -304,6 +310,17 @@ $(document).ready(function() {
     <hr />
     <p class="right">WebsiteName (c) 2011. Copyright Reserved</p>
   </div>
+  <div id="popupContact"> <a id="popupContactClose">x</a>
+    <h1>Title of our cool popup, yay!</h1>
+    <p id="contactArea"> Here we have a simple but interesting sample of our new stuning and smooth popup. As you can see jQuery and CSS does it easy... <br/>
+      <br/>
+      We can use it for popup-forms and more... just experiment! <br/>
+      <br/>
+      Press ESCAPE, Click on X (right-top) or Click Out from the popup to close the popup! <br/>
+      <br/>
+      <a href="http://www.yensdesign.com"><img src="logo.jpg" alt="Go to yensdesign.com"/></a> </p>
+  </div>
+  <div id="backgroundPopup"></div>
 </div>
 </body>
 </html>

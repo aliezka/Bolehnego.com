@@ -1,6 +1,7 @@
 @import url("libraries.css");
 @import url("heading.css");
 @import url("templates.css");
+@import url("popup.css");
 /**LOGIN PANEL**/
 .login_form {
 	padding:30px;
@@ -122,6 +123,7 @@
 	color:#fff !important;
 }
 /**nav**/
+
 .nav .parent li a {
 	padding:10px;
 	color:#333;
@@ -129,8 +131,7 @@
 	background-color:#CCC;
 	text-align:right;
 	margin-bottom:3px;
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
+
 	display:block;
 }
 .nav .parent .active a, .nav li a:hover {

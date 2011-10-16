@@ -80,6 +80,32 @@ $(document).ready(function() {
 </head>
 
 <body>
+
+<!---Priviledges Edit Pop Up Menu------------->
+
+<div id="popupContact"> 
+  <script type='text/javascript' src="js/popup.js"></script>
+  <p id="contactArea">
+  <form action="#" method="get">
+  <div class="inputset">
+    <div class="input">
+      <fieldset>
+        <select>
+          <option selected="selected" value="">Super Admin</option>
+          <option value="">Admin</option>
+          <option value="">Customer</option>
+        </select>
+      </fieldset>
+    </div>
+  </div>
+		<center><input type="submit" value="Change"	name="change-priviledges"/></center>
+  </form>
+  </p>
+</div>
+<div id="backgroundPopup"></div>
+
+<!---End of Pup Up Menu-------->
+
 <div class="max1000"> 
   <!------TOPMENU & HEADER-------------------------->
   
@@ -163,17 +189,17 @@ $(document).ready(function() {
           </thead>
           <tbody>
             <tr>
-              <td>1</td>
-              <td><a href="#">lavalyst@gmail.com</a></td>
-              <td><a href="#">Super-Admin</a></td>				
-              <td>Delete</td>
+              <td><a href="#">h87y8123hhja899</a></td>
+              <td>lavalyst@gmail.com</td>
+              <td><a href="#" class="popupTrigger">Super-Admin</a></td>
+              <td><a href="#"><img src="img/delete.png" /></a></td>
             </tr>
             <tr>
-              <td>2</td>
-              <td><a href="#">kampret@gmail.com</a></td>
-              <td><a href="#">Admin</a></td>				
-              <td>Delete</td>
-            </tr>                       
+              <td><a href="#">7hu12y3hahbuz12</a></td>
+              <td>kampret@gmail.com</td>
+              <td><a href="#" class="popupTrigger">Admin</a></td>
+              <td><a href="#"><img src="img/delete.png" /></a></td>
+            </tr>
           </tbody>
         </table>
       </div>

@@ -47,7 +47,7 @@ a:focus{background-color:inherit;}
 .small-link{color:#70b6f2; font-size:90%; text-decoration:underline;}
 .small-link-simple{color:#666;text-decoration:none;font-size:90%; font-weight:normal;}
 .err1{color:#ff553e; font-weight:bold; padding:15px; border:1px solid #f4f3f3; margin-top:20px; text-align:center; font-size:14px;}
-
+.err2{color:#ff553e; font-weight:bold; margin-top:5px; font-style:italic; font-size:90%; }
 
 /**inputset & labelset**/
 .inputset {
