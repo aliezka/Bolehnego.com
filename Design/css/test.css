@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+.body{
+	background-color:#FF0;
+}
+
+
+.red{
+	color:red;
+	font-size:70px;
+}
+
+.small{
+	font-size:9px;
+}
+
+.border-bottom{
+	border-bottom:15px dashed #333;
+	
+}
+
+#blue{
+	color:#00F;
+	font-size:70px;
+}
