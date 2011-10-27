@@ -1,0 +1,14 @@
+@charset "utf-8";
+/* CSS Document */
+
+.hitam{
+	background-color:#000;
+	}
+.red{
+	background-color:#F00;
+	margin:10px;
+	}
+.white{
+	color:#FFF;
+	text-align:center;
+	}
